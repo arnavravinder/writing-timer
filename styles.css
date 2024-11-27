@@ -1,0 +1,202 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Jost', sans-serif;
+  color: white;
+  background: url('image.jpg') no-repeat center center/cover;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.light-mode {
+  background: url('image-light.jpg') no-repeat center center/cover;
+  background-size: cover;
+  color: black;
+}
+
+.background {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(3px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-family: 'Covered By Your Grace', cursive;
+  font-size: 3rem;
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  transform: rotate(-10deg);
+}
+
+.timer-container {
+  font-size: 5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.option-btn {
+  padding: 0.8rem 1.8rem;
+  border-radius: 30px;
+  border: 2px solid white;
+  background: white;
+  color: black;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s, color 0.2s;
+}
+
+body.light-mode .option-btn {
+  border: 2px solid black;
+  background: black;
+  color: white;
+}
+
+.option-btn:hover {
+  transform: scale(1.05);
+  background: #dcdcdc;
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+}
+
+.start-btn {
+  padding: 0.4rem 3.5rem;
+  border-radius: 30px;
+  border: none;
+  background: #27ae60;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.start-btn.started {
+  background: #f39c12;
+}
+
+.start-btn.resume {
+  background: #27ae60;
+}
+
+.start-btn:hover {
+  transform: scale(1.05);
+}
+
+.restart-btn img {
+  width: 40px;
+  height: 40px;
+  background: none !important;
+  display: block;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.restart-btn img:hover {
+  transform: scale(1.2);
+}
+
+.mode-toggle {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.mode-toggle img {
+  width: 50px;
+  height: 50px; 
+  transition: transform 0.2s ease;
+}
+
+.mode-toggle:hover img {
+  transform: scale(1.2);
+}
+.footer {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
+  font-family: 'Jost', sans-serif;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.footer a {
+  color: #00aaff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+body.light-mode .footer {
+  color: black; 
+}
+
+body.light-mode .footer a {
+  color: #0077cc; 
+}
+
+footer .logo {
+  width: 50px;
+  height: auto;
+}
+
+footer .logo:hover {
+  animation: shakeVigorously 1ms linear infinite;
+}
+
+@keyframes shakeVigorously {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
